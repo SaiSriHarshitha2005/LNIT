@@ -1,0 +1,7 @@
+react
+react-dom
+react-router-dom
+tailwindcss
+@tailwindcss/vite
+vite
+@vitejs/plugin-react

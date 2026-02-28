@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "Outfit", system-ui, sans-serif;
+  --color-brand-100: #e8f5e9;
+  --color-brand-500: #4caf50;
+  --color-brand-700: #388e3c;
+  --color-brand-900: #1b5e20;
+  --color-earth-100: #f5f0e6;
+  --color-earth-500: #a1887f;
+  --color-earth-800: #4e342e;
+  --color-earth-900: #2e1b15;
+  --color-surface-light: #ffffff;
+  --color-surface-dark: #121212;
+}
+
+@layer base {
+  :root {
+    --text-primary: var(--color-earth-800);
+    --bg-primary: var(--color-earth-100);
+  }
+
+  /* Optional dark mode preferences */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --text-primary: var(--color-earth-100);
+      --bg-primary: var(--color-surface-dark);
+    }
+  }
+
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/30 backdrop-blur-md border border-white/20 shadow-lg dark:bg-black/30 dark:border-white/10;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
